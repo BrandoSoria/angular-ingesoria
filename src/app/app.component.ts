@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular_ingesoria';
+  public myName:string ='brandon';
+
+  //por si acaso lo tengo que  borrar
+  onSayHello(message: any){
+    console.log(message);
+    }
 }

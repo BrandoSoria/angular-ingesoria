@@ -304,9 +304,10 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-<custom-hello>
-  
-</custom-hello>
+
+ 
+
+
   <span>Welcome</span>
     <div class="spacer"></div>
     <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
@@ -387,6 +388,12 @@
   <!-- Next Steps -->
   <h2>Next Steps</h2>
   <p>What do you want to do next with your app?</p>
+
+   <!-- interpolacion -->
+   <div [class.hidden] ="myHelloComponent.inputName.length==0" > escribiendo '{{myHelloComponent.inputName}} in HelloComponent </div>
+
+   <custom-hello #myHelloComponent [name]="myName" (sayHello)="onSayHello($event)"></custom-hello>
+   
 
   <input type="hidden" #selection>
 
