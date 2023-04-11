@@ -1,11 +1,13 @@
 
 
-<p (click)="onNameClick()"> 
-hello {{name}}!    
-</p>
 
 
-<div>
+<div *ngIf="nameList.length<5 ">
     <input type="text" [(ngModel)]="inputName">
     <button (click)="addName()"> añadir un nombre</button>
 </div>
+
+
+<p *ngFor=" let item of nameList; index as i"  (click)="onNameClick()"> 
+    {{i}} - hello {{item}}!    
+    </p>
