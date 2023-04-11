@@ -391,11 +391,11 @@
   </h2>
   <p>What do you want to do next with your app?</p>
 
-  <custom-hello name="br"></custom-hello>
-  <custom-hello name="juan"></custom-hello>
+ 
 
    <!-- interpolacion -->
-   <div [class.hidden] ="myHelloComponent.inputName.length==0" > escribiendo '{{myHelloComponent.inputName}} in HelloComponent </div>
+   <div [class.hidden] ="myHelloComponent.inputName.length==0">
+    <span [ngClass]="updateNameClasses(myHelloComponent.inputName)"> escribiendo '{{myHelloComponent.inputName}} in HelloComponent</span>  </div>
 
    <custom-hello #myHelloComponent [name]="myName" (sayHello)="onSayHello($event)"></custom-hello>
    

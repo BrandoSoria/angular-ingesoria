@@ -2,12 +2,19 @@
 
 
 
-<div *ngIf="nameList.length<5 ">
-    <input type="text" [(ngModel)]="inputName">
-    <button (click)="addName()"> añadir un nombre</button>
+<div [ngSwitch]="nameList.length">
+    <div *ngSwitchDefault> 
+        <input type="text" [(ngModel)]="inputName">
+        <button (click)="addName()"> añadir un nombre</button>
+    </div>
+    <div *ngSwitchCase="5">
+        <p>no puedes agregar mas</p>
+
+    </div>
+  
 </div>
 
 
 <p *ngFor=" let item of nameList; index as i"  (click)="onNameClick()"> 
-    {{i}} - hello {{item}}!    
+    {{i}} - hello {{item | upperCapital}}!  
     </p>
